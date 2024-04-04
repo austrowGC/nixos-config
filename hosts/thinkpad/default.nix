@@ -14,8 +14,8 @@ in
       # efi.efiSysMountPoint = "/boot";
       grub.configurationLimit = 4;
       grub.efiSupport = true;
+      timeout = 3;
     };
-    timeout = 3;
   };
 
   hardware = {

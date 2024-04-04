@@ -9,8 +9,8 @@ in
 {
   imports =
     (  import ../modules/desktops
-    ++ import ../modules/editors
     ++ import ../modules/programs
+    ++ import ../modules/editors
     ++ import ../modules/shells
     );
 
@@ -158,8 +158,6 @@ in
       '';
     };
   };
-
-  flatpak.enable = true;                    # Enable Flatpak (see module options)
 
   nix = {                                   # Nix Package Manager Settings
     settings ={
