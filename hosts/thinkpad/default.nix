@@ -1,10 +1,10 @@
 { pkgs, ... }:
 let
-  vars.blank-sha256 = (lib.lists.foldr (a: b: a+b) "" (lib.lists.replicate 52 "0"));
+  vars.blank-sha256 = (pkgs.lib.lists.foldr (a: b: a+b) "" (pkgs.lib.lists.replicate 52 "0"));
 in
 {
   imports =
-    [ ./hardware-configurations.nix
+    [ ./hardware-configuration.nix
     ];
 
   boot = {

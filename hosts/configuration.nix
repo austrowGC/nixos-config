@@ -1,26 +1,5 @@
 #
 #  Main system configuration. More information available in configuration.nix(5) man page.
-#
-#  flake.nix
-#   ├─ ./hosts
-#   │   ├─ default.nix
-#   │   └─ configuration.nix *
-#   └─ ./modules
-#       ├─ ./desktops
-#       │   └─ default.nix
-#       ├─ ./editors
-#       │   └─ default.nix
-#       ├─ ./hardware
-#       │   └─ default.nix
-#       ├─ ./programs
-#       │   └─ default.nix
-#       ├─ ./services
-#       │   └─ default.nix
-#       ├─ ./shell
-#       │   └─ default.nix
-#       └─ ./theming
-#           └─ default.nix
-#
 
 { config, lib, pkgs, unstable, inputs, vars, ... }:
 
@@ -28,13 +7,12 @@ let
   terminal = pkgs.${vars.terminal};
 in
 {
-  imports = ( import ../modules/desktops ++
-              import ../modules/editors ++
-              import ../modules/hardware ++
-              import ../modules/programs ++
-              import ../modules/services ++
-              import ../modules/shell ++
-              import ../modules/theming );
+  imports =
+    (  import ../modules/desktops
+    ++ import ../modules/editors
+    ++ import ../modules/programs
+    ++ import ../modules/shells
+    );
 
   boot = {
     tmp = {
