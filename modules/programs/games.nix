@@ -15,9 +15,13 @@ let
     '';
   });
 in
+with lib;
 {
   options = {
-    games.enable = lib.mkEnableOption "enables steam games";
+    games.enable = mkOption {
+      type = types.bool;
+      default = false;
+    };
   };
 
   config = lib.mkIf config.games.enable {
