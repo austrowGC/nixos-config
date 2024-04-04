@@ -8,5 +8,5 @@
     "./wofi.nix"
   ];
 
-  games.enable = lb.mkDefault false;
+  games.enable = lib.mkDefault false;
 }
