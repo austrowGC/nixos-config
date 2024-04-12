@@ -6,7 +6,7 @@
 { config, lib, system, pkgs, hyprland, hyprlock, hypridle, vars, host, ... }:
 
 let
-  colors = import ../theming/colors.nix;
+  colors = import ../themes/colors.nix;
 in
 with lib;
 with host;
@@ -132,14 +132,6 @@ with host;
           disable_loading_bar = true;
           grace = 0;
         };
-        backgrounds = [{
-          monitor = "";
-          path = ".config/wall.png";
-          color = "rgba(25, 20, 20, 1.0)";
-          blur_passes = 1;
-          blur_size = 0;
-          brightness = 0.2;
-        }];
         input-fields = [
           {
             monitor = "";

@@ -4,7 +4,7 @@
 
 { config, lib, pkgs, vars, host, ...}:
 let
-  colors = import ../theming/colors.nix;
+  colors = import ../themes/colors.nix;
 in
 with host;
 let

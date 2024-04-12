@@ -47,7 +47,7 @@ with lib;
       #pkgs.lutris        # Game Launcher
       #pkgs.prismlauncher # MC Launcher
       #pkgs.retroarchFull     # Emulator
-      pkgs.steam          # Game Launcher
+      pkgs.steam
       #pcsx2                   # Emulator
     ];
 

@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  vars.blank-sha256 = (pkgs.lib.lists.foldr (a: b: a+b) "" (pkgs.lib.lists.replicate 52 "0"));
+  blanksha256 = (pkgs.lib.lists.foldr (a: b: a+b) "" (pkgs.lib.lists.replicate 52 "0"));
 in
 {
   imports =
@@ -36,13 +36,13 @@ in
 
   environment = {
     systemPackages = with pkgs; [
-      codium                # File Editor
-      discord               # Messaging
-      gimp                  # Image Editor
-      go2tv                 # Casting
-      jellyfin-media-player # Media Player
-      kodi                  # Media Player
-      obs-studio            # Live Streaming
+      codium
+      discord
+      gimp
+      go2tv
+      obs-studio
+      # jellyfin-media-player # https://jellyfin.org
+      # kodi  # https://kodi.tv
     ];
   };
 
@@ -58,7 +58,7 @@ in
         _: { src = builtins.fetchTarball {
           url = "https://discord.com/api/download?platform=linux&format=tar.gz";
           # change blank sha with actual value
-          sha256 = vars.blank-sha256;
+          sha256 = blanksha256;
         };}
       );
     })

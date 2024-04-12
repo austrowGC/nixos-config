@@ -59,7 +59,7 @@
   }:
   let
     vars = {
-      username = ./username.nix;
+      user = "austrowgc";
       location = "$HOME/.setup";
       terminal = "kitty";
       editor = "nvim";

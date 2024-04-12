@@ -30,7 +30,6 @@ with lib;
         enable = true;
 
         layout = "us";
-        xkbOptions = "eurosign:e";
         libinput.enable = true;
         modules = [ pkgs.xf86_input_wacom ];
         wacom.enable = true;
@@ -49,7 +48,7 @@ with lib;
         gnome.dconf-editor
         gnome.gnome-tweaks
       ];
-      gnome.excludePackages = (with pkgs; [             # Ignored Packages
+      gnome.excludePackages = (with pkgs; [ # Ignored Packages
         gnome-tour
       ]) ++ (with pkgs.gnome; [
         atomix
@@ -73,7 +72,6 @@ with lib;
             "org.gnome.settings.desktop"
             "alacritty.desktop"
             "firefox.desktop"
-            "emacs.desktop"
             "org.gnome.nautilus.desktop"
             "com.obsproject.studio.desktop"
             "plexmediaplayer.desktop"
@@ -134,23 +132,23 @@ with lib;
           # unmaximize = ["<super>down"];
           maximize = ["@as []"];                        # Tiling
           unmaximize = ["@as []"];
-          switch-to-workspace-left = ["<alt>left"];
-          switch-to-workspace-right = ["<alt>right"];
-          switch-to-workspace-1 = ["<alt>1"];
-          switch-to-workspace-2 = ["<alt>2"];
-          switch-to-workspace-3 = ["<alt>3"];
-          switch-to-workspace-4 = ["<alt>4"];
-          switch-to-workspace-5 = ["<alt>5"];
-          move-to-workspace-left = ["<shift><alt>left"];
-          move-to-workspace-right = ["<shift><alt>right"];
-          move-to-workspace-1 = ["<shift><alt>1"];
-          move-to-workspace-2 = ["<shift><alt>2"];
-          move-to-workspace-3 = ["<shift><alt>3"];
-          move-to-workspace-4 = ["<shift><alt>4"];
-          move-to-workspace-5 = ["<shift><alt>5"];
+          switch-to-workspace-left = ["<super>left"];
+          switch-to-workspace-right = ["<super>right"];
+          switch-to-workspace-1 = ["<super>1"];
+          switch-to-workspace-2 = ["<super>2"];
+          switch-to-workspace-3 = ["<super>3"];
+          switch-to-workspace-4 = ["<super>4"];
+          switch-to-workspace-5 = ["<super>5"];
+          move-to-workspace-left = ["<shift><super>left"];
+          move-to-workspace-right = ["<shift><super>right"];
+          move-to-workspace-1 = ["<shift><super>1"];
+          move-to-workspace-2 = ["<shift><super>2"];
+          move-to-workspace-3 = ["<shift><super>3"];
+          move-to-workspace-4 = ["<shift><super>4"];
+          move-to-workspace-5 = ["<shift><super>5"];
           move-to-monitor-left = ["<super><alt>left"];
           move-to-monitor-right = ["<super><alt>right"];
-          close = ["<super>q" "<alt>f4"];
+          close = ["<shift><super>q" "<alt>f4"];
           toggle-fullscreen = ["<super>f"];
         };
 
@@ -176,22 +174,6 @@ with lib;
             "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
           ];
         };
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-          binding = "<super>return";
-          command = "alacritty";
-          name = "open-terminal";
-        };
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-          binding = "<super>t";
-          command = "emacs";
-          name = "open-editor";
-        };
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-          binding = "<super>e";
-          command = "nautilus";
-          name = "open-file-browser";
-        };
-
         "org/gnome/shell/extension/dash-to-panel" = {   # Set Manually
           panel-position = ''{"0":"top","1":"top"}'';
           panel-sizes = ''{"0":24,"1":24}'';
