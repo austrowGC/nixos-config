@@ -49,4 +49,25 @@ in
     ];
   };
 
+  steamengine = lib.nixosSystem {
+    inherit system;
+    specialArgs = {
+      inherit inputs system unstable vars;
+      host = {
+        hostName = "steamengine";
+      };
+    };
+    modules = [
+      nixvim.nixosModules.nixvim
+      ./steamengine
+      ./configuration.nix
+
+      home-manager.nixosModules.home-manager {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+      }
+    ];
+    
+  };
+
 }
