@@ -111,9 +111,6 @@ with lib;
           clock-show-weekday = true;
           # gtk-theme = "adwaita-dark";
         };
-        # "org/gnome/desktop/session" = {               # Not Working
-        #   idle-delay = "uint32 900";
-        # };
         "org/gnome/desktop/privacy" = {
           report-technical-problems = "false";
         };
@@ -128,30 +125,8 @@ with lib;
           button-layout = ":minimize,close";
         };
         "org/gnome/desktop/wm/keybindings" = {
-          # maximize = ["<super>up"];                   # Floating
-          # unmaximize = ["<super>down"];
-          maximize = ["@as []"];                        # Tiling
-          unmaximize = ["@as []"];
-          switch-to-workspace-left = ["<super>left"];
-          switch-to-workspace-right = ["<super>right"];
-          switch-to-workspace-1 = ["<super>1"];
-          switch-to-workspace-2 = ["<super>2"];
-          switch-to-workspace-3 = ["<super>3"];
-          switch-to-workspace-4 = ["<super>4"];
-          switch-to-workspace-5 = ["<super>5"];
-          move-to-workspace-left = ["<shift><super>left"];
-          move-to-workspace-right = ["<shift><super>right"];
-          move-to-workspace-1 = ["<shift><super>1"];
-          move-to-workspace-2 = ["<shift><super>2"];
-          move-to-workspace-3 = ["<shift><super>3"];
-          move-to-workspace-4 = ["<shift><super>4"];
-          move-to-workspace-5 = ["<shift><super>5"];
-          move-to-monitor-left = ["<super><alt>left"];
-          move-to-monitor-right = ["<super><alt>right"];
-          close = ["<shift><super>q" "<alt>f4"];
           toggle-fullscreen = ["<super>f"];
         };
-
         "org/gnome/mutter" = {
           workspaces-only-on-primary = false;
           center-new-windows = true;
@@ -230,15 +205,6 @@ with lib;
         "org/gnome/shell/extensions/forge/keybindings" = { # Set Manually
           focus-border-toggle = true;
           float-always-on-top-enabled = true;
-          window-focus-up = ["<alt>up"];
-          window-focus-down = ["<alt>down"];
-          window-focus-left = ["<alt>left"];
-          window-focus-right = ["<alt>right"];
-          window-move-up = ["<shift><alt>up"];
-          window-move-down = ["<shift><alt>down"];
-          window-move-left = ["<shift><alt>left"];
-          window-move-right = ["<shift><alt>right"];
-          window-swap-last-active = ["@as []"];
           window-toggle-float = ["<shift><super>f"];
         };
         # "org/gnome/shell/extensions/dash-to-dock" = { # If Dock Preferred
