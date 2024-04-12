@@ -44,7 +44,7 @@ with lib;
     environment.systemPackages = [
       #config.nur.repos.c0deaddict.oversteer      # Steering Wheel Configuration
       #pkgs.heroic        # Game Launcher
-      #pkgs.lutris        # Game Launcher
+      pkgs.lutris
       #pkgs.prismlauncher # MC Launcher
       #pkgs.retroarchFull     # Emulator
       pkgs.steam
